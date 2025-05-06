@@ -11,7 +11,8 @@ else {
         if (mysqli_num_rows($result) > 0) {
             echo "<table border='5'>";
             echo "<tr><th>Car ID</th><th>Make</th><th>Model</th><th>Price</th><th>Year of Manufacture</th></tr>"; //Genai"Help me with creating this table"
-        
+            
+            //print each row in the table
             while ($row = mysqli_fetch_assoc($result)) {
                 echo "<tr>";
                 echo "<td>" . $row['car_id'] . "</td>";
@@ -21,7 +22,7 @@ else {
                 echo "<td>" . $row['yom'] . "</td>";
                 echo "</tr>"; 
             } 
-            
+
             echo "</table>";
         } else {
                 echo "<p>There are no cars to display.</p>"; //if no records are found, print this message
